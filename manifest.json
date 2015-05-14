@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "FlapMMO bot",
+  "version": "1.0.0.1",
+  "description": "Bot for http://flapmmo.com/ to make gameplay easier",
+  "author": "FroHenK ",
+  "permissions": ["tabs",
+    "http://flapmmo.com/",
+    
+    "webRequest",
+    "webRequestBlocking",
+    "*://flapmmo.com/"
+ 
+  ],
+  "background":{
+    "scripts": ["blocking.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": ["main.js"],
+  "content_scripts": [
+    {
+      "matches": ["http://flapmmo.com/*"],
+      "js": ["bootstrap.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "short_name": "FlapMMOBot"
+}
